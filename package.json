@@ -1,0 +1,20 @@
+{
+  "name": "practica-node",
+  "version": "0.1.0",
+  "description": "back de chat como wsp",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "chat",
+    "whatsap",
+    "server"
+  ],
+  "author": "Angel",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1"
+  }
+}
