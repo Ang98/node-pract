@@ -1,10 +1,4 @@
-const db = require('mongoose');
 const Model = require('./model')
-
-db.Promise= global.Promise;
-db.connect('mongodb://localhost:27017/telegram',{useNewUrlParser:true})
-
-console.log('[db] conectada con exito');
 
 const addMessages =(message)=>{
     const myMessage = new Model(message);
@@ -31,8 +25,15 @@ const updateText = async(id,message) =>{
     return newMessage;
 }
 
+const removeMessage = (id) =>{
+    return Model.deleteOne({
+        _id: id
+    })
+}
+
 module.exports={
     add: addMessages,
     list: getMessage,
-    updateText
+    updateText,
+    removeMessage
 }

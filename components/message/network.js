@@ -8,7 +8,6 @@ const controller = require('./controller')
 router.get('/', (req, res) => {
 
     const filterMessage = req.query.user || null;
-    console.log(filterMessage);
     controller.getMessages(filterMessage)
         .then((messageList) => {
             response.success(req, res, messageList, 200)
@@ -45,7 +44,7 @@ router.patch('/:id', (req, res) => {
 router.delete('/:id', (req, res) => {
     controller.deleteMessage(req.params.id)
         .then(() => {
-            response.success(req, res, `Usuario ${req.paramas.id} eliminado`)
+            response.success(req, res, `Usuario ${req.params.id} eliminado`)
         })
         .catch(e => {
             response.error(req, res, 'Error interno', 500, e);
